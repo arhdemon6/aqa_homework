@@ -3,7 +3,7 @@
 # 2 - In modified list swap elements with indexes 1 and 5 (1<->5). Print result
 # 3 - check that all people in modified list with records indexes 6, 10, 13
 #   have age >=30. Print condition check result
-from main import print_hi
+#from main import print_hi
 
 people_records = [
   ('John', 'Doe', 28, 'Engineer', 'New York'),
@@ -60,14 +60,19 @@ for person in people_records:
 print(f"===========================================================")
 print(f"# 3 - check that all people in modified list with records indexes 6, 10, 13 have age >=30. Print condition check result")
 
-old_people_records = people_records[6], people_records[10] ,people_records[13]
+print_hi = people_records[6], people_records[10] ,people_records[13]
 print("Работкики на позициях 6, 10 и 13 по индексу:")
-print(old_people_records)
-print("Пенсия:")
-for age in old_people_records:
-    if age[2] >= 30:
-      print({age})
-print("Молодые люди:")
-for age in old_people_records:
-    if age[2] < 30:
-      print({age})
+print(print_hi)
+
+all_match = True
+for person in print_hi:
+    if person[2] >= 30:
+        continue
+    else:
+        all_match = False
+        break
+
+if all_match:
+    print("Все работники из списка миллениалы!")
+else:
+    print("В команде присутствуют зумеры (-_-)")
